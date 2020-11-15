@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h4>Managment System</h4>
+    <h5>Droped debts:</h5>
+    {% for debt in debts%}
+    {{debt.date }} ===> {{debt.amount}} dzd<br>
+    {% endfor %}
+    <br><hr>
+    <a href="{% url 'new_debt' %}">Drop this month's debt <small>({{monthly_fees}} dzd/subscriber)</small></a>
+    <br><br>
+
+    <hr><hr>
+    <h4>Subscribers</h4>
+    {% for subscriber in subscribers %}
+    <a href="{% url 'details' subscriber.id %}"><h3>{{subscriber.first_name }} {{subscriber.last_name }}</h3></a>
+    {{ subscriber.date_joined }} / {{ subscriber.updated }}
+    <br>
+    subscribed months:
+    {{ subscriber.total_months }}<br>
+    debt:
+    {{ subscriber.debt }} dzd
+
+
+    <hr>
+    {% endfor %}
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>{{subscriber.first_name }} {{subscriber.last_name }}:</h3>
+    {{ subscriber.date_joined }} / {{ subscriber.updated }}
+    <br>
+    subscribed months:
+    {{ subscriber.total_months }}
+
+    <hr>
+    <h3>Payments:</h3>
+    {% for payment in payments %}
+    {{ payment.amount}} dzd ===>
+    {{ payment.date}}<br>
+    {% endfor %}
+
+    <hr>
+    total payments: {{total_payments}} dzd <br>
+    month fees: {{monthly_fees}} dzd/month<br>
+    debt : {{subscriber.debt }} dzd
+
+
+</body>
+
+</html>
