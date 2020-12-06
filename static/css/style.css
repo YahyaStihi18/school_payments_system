@@ -1,0 +1,16 @@
+body{
+    background: linear-gradient(rgb(52, 102, 174) 0%, rgb(83, 144, 241) 100%);    
+}
+
+.bodybox{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.vl {
+    border-left: 1px solid rgb(224, 221, 221);
+  }
+  

@@ -1,8 +1,9 @@
 from django.db import models
 import datetime
 
-
+level_ch = [('1','1'),('2','2'),('3','3'),('4','4'),('5','5')]
 class Subscriber(models.Model):
+    level = models.CharField(choices=level_ch,max_length=20)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     image = models.ImageField(upload_to='image')
@@ -10,6 +11,7 @@ class Subscriber(models.Model):
     date_joined = models.DateTimeField()#auto_now_add=True, auto_now=False)
     active = models.BooleanField(default=True)
     updated = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         return self.first_name +' '+self.last_name
@@ -33,6 +35,7 @@ class Payment(models.Model):
 
     
 class Fee(models.Model):
+    level = models.CharField(choices=level_ch,max_length=20)
     name = models.CharField(max_length=20)
     price = models.IntegerField()
     def __str__(self):
